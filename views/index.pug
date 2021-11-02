@@ -4,4 +4,18 @@ block content
   h1= title
   p This is Jitendra Kondru
   br 
-  button(type="button", class="btn btn-secondary") Press Me
+  button(type="button", class="btn btn-secondary" onClick="update()") Press Me
+  br
+  br
+  div(id="target") Display
+  div(class="Apple")
+
+  script. 
+         var client_count = 0;
+         function  update() {
+          
+                client_count++;
+               
+             document.getElementById("target").innerHTML ="Value now "+client_count;
+          }
+           
