@@ -2,22 +2,8 @@ extends layout
 
 block content
   h1= title
-  p This is Jitendra Kondru
-  br 
-  button(type="button", class="btn btn-secondary" onClick="update()") Press Me
-  br
-  br
-  div(id="target") Display
-  br
-  br
-  a(href='/apple') Apple Page
-
-  script. 
-         var client_count = 0;
-         function  update() {
-          
-                client_count++;
-               
-             document.getElementById("target").innerHTML ="Value now "+client_count;
-          }
-           
+  - var image_names=["1.jpg","2.jpg","3.jpg","4.jpg","5.jpg"]
+   - for(let i=0; i<3; i++) {
+        - var img= Math.floor(Math.random()*5)
+           img(src=`\images\${images_names[img]}` alt=`${img}` width='300px' height='300px')
+   - }
